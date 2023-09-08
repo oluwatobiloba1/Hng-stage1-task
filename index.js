@@ -20,6 +20,11 @@ const express = require('express');
 const app = express()
 const port = 5000
 
+app.get('/', (req, res) => {
+
+  res.end(JSON.stringify({message: "you must be trying to access the '/api' route. Don't forget to do that and include the search params"})).status(404);
+})
+
 app.get('/api', (req, res) => {
   const currentDate = new Date()
   const hngInternDetail = {
