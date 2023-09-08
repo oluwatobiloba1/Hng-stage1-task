@@ -18,10 +18,10 @@ const express = require('express');
 
 
 const app = express()
-const currentDate = new Date()
 const port = 5000
 
 app.get('/api', (req, res) => {
+  const currentDate = new Date()
   const hngInternDetail = {
     slack_name: req.query.slack_name ??'slack name here',
     current_day: currentDate.toLocaleString('en-us', {  weekday: 'long' }),
